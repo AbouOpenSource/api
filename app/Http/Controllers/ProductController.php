@@ -24,7 +24,7 @@ class ProductController extends Controller
 
 
     /**
-     * Display a listing of the resource.
+     * Display a <lis></lis>ting of the resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -107,7 +107,18 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        
+        $request['detail'] = $request->description;
+        unset($request['description']);
+     $product->update($request->all());
+
+
+
+
+
+
+
+
     }
 
     /**
